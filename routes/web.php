@@ -39,3 +39,4 @@ Route::get('/', [HomeController::class, 'all'])->name('all');
 Route::get('/is_Sale', [HomeController::class, 'isSale'])->name('isSale');
 Route::get('/categorie/{id}', [HomeController::class, 'sortByCategorie'])->name('categorie');
 Route::get('/show/{id}', [HomeController::class, 'show'])->name('show');
+

@@ -8,9 +8,9 @@
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 " style="color:#66EB9A;">Solde</a></li>
-        <li><a href="#" class="nav-link px-2 " style="color:#66EB9A;">Homme</a></li>
-        <li><a href="#" class="nav-link px-2" style="color:#66EB9A;">Femme</a></li>
+        <li><a href="{{route('isSale')}}" class="nav-link px-2 " style="color:#66EB9A;">Solde</a></li>
+        <li><a href="{{ route('categorie', ['id' => 1]) }}" class="nav-link px-2 " style="color:#66EB9A;">Homme</a></li>
+        <li><a href="{{ route('categorie', ['id' => 2]) }}" class="nav-link px-2" style="color:#66EB9A;">Femme</a></li>
       </ul>
 
       <div class="col-md-3 text-end">

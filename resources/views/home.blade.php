@@ -16,8 +16,7 @@
                   <p class="card-text">{{number_format($p->price, 2, ',', ' ')}} €</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      <a href="{{route('show', ['id' => $p->id])}}" class="btn btn-sm btn-outline-secondary">View</a>
                     </div>
                     <small class="text-muted">9 mins</small>
                   </div>
