@@ -28,7 +28,7 @@ class ProductSeeder extends Seeder
                 'price' => $faker->randomFloat(2), 
                 'isActivated' => $faker->randomElement([true, false]), 
                 'isSale' => $faker->randomElement([true, false]), 
-                'reference' =>$faker->word(16), 
+                'reference' =>$faker->bothify('################'), 
                 'category_id' => $categorie->id, 
                 'image' => "images/" . $categorie->name . "-" . $faker->numberBetween(1, 10) . ".jpg", 
                 'created_at' => Carbon::now(),
