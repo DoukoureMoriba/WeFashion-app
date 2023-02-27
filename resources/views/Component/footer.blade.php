@@ -1,5 +1,5 @@
-<div class="container">
-    <footer class="py-5">
+<div class="container-fluid" style="background-color:#000;">
+    <footer class="py-5" style="color:#fff;">
       <div class="row">
         <div class="col-6 col-md-2 mb-3">
           <h5>Service Client</h5>
@@ -10,21 +10,12 @@
           </ul>
         </div>
   
-        {{-- <div class="col-6 col-md-2 mb-3">
-          <h5>Réseaux sociaux</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-          </ul>
-        </div> --}}
+       
   
         <div class="col-6 col-md-2 mb-3">
           <h5>Informations</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mentions légales </a></li>
+          <ul class="nav flex-column";>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" >Mentions légales </a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Presse</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Fabrication</a></li>
             
@@ -43,7 +34,7 @@
         </div>
       </div>
   
-      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"style="color:#fff;">
         <p>&copy; 2023 WeFashion, Inc. Tous droits réservés.</p>
         
         <ul class="list-unstyled d-flex">
