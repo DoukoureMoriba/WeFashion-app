@@ -14,18 +14,18 @@ class AuthController extends Controller
             'password' =>'required',
         ]);
 
-        //Filtre qui va récupérer que les infos de ces deux champs dans le formulaire
+        //Recupération des informations dans les champs
 
         $credentials = $request->only('email','password');
         if(auth()->attempt($credentials)){
             $user = auth()->user();
 
-            //L'utilisateur a le role admin
+            //Le role de l'utilisateur
             if($user->role === 'admin'){
                 return redirect()->route('dashboard');
             }
        } else {
-        //retourne des erreurs si un champ est mal renseigné
+        
         return redirect()->back()->withErrors('Les identifiants sont incorrects.');
        }
         
@@ -45,7 +45,7 @@ class AuthController extends Controller
             'email'=>$request->input('email'),
             'password' => bcrypt($request->input('password')),
         ]);
-    //Connexion automatique apres la création du compte...
+    //Connexion automatique apres la création du compte redirigeant sur la page d'acceuil automatiquement...
         auth()->login($user); 
         return redirect()->route('all');
 }

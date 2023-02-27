@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CategoriesController extends Controller
 {
     /*
-     * afficher la liste des produits
+     * Présente la liste de tout les produits, le même processus que celui des produits du controller ProductsController
      */
     public function index() 
     {
@@ -18,7 +18,7 @@ class CategoriesController extends Controller
     }
 
     /*
-     * retourne le formulaire de creation de categorie
+     * Renvoie les élements de creation de categorie
      */
     public function create() 
     {
@@ -26,7 +26,7 @@ class CategoriesController extends Controller
     }
 
     /*
-     * enregistrer la catégorie en base de donnée
+     * sauvegarde la catégorie dans la base de donnée
      */
     public function store(Request $request) 
     {
@@ -38,7 +38,7 @@ class CategoriesController extends Controller
     }
 
     /*
-     * retourne le formulaire d'edition de categorie
+     * Renvoie les éléments de la modification de categorie
      */
     public function edit(Request $request) 
     {
@@ -48,7 +48,7 @@ class CategoriesController extends Controller
     }
 
     /*
-     * Mettre à jour une categorie
+     * mise a jour de catégorie en envoyant les nouvelle données
      */
     public function update(Request $request) 
     {
@@ -61,7 +61,7 @@ class CategoriesController extends Controller
     }
 
     /*
-     * Suprimmer une categorie
+     * Destruction de  la categorie
      */
     public function destroy(Request $request) 
     {

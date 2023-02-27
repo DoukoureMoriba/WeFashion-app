@@ -10,17 +10,17 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
      /**
-     * afficher la liste des produits
+     * Présente tout la liste des produits
      */
     public function index()
     {
-        // récuperer 20 produits par page
+        // reprendre 20 produits par page dans
         $products = Product::paginate(20);
         return view('admin.dashboard', compact('products'));
     }
 
     /**
-     * retourne le formulaire de creation de produit
+     * Retourne les éléments de instauration de produit
      */
     public function create()
     {
@@ -30,12 +30,12 @@ class ProductsController extends Controller
     }
 
     /**
-     * enregistrer le produit en base de donnée
+     * sauvegarde le produit dans la DB
      */
     public function store(Request $request)
     {
 
-        // enregistrer l'image sur le serveur
+        // sauvegarde l'image sur le serveur
         $fichierLP = $request->file('image');
         $fileNameLP = "";
         if ($request->hasfile('image')) {
@@ -44,7 +44,7 @@ class ProductsController extends Controller
             $fichierLP->move(public_path('image/'), $fileNameLP);
         }
 
-        // créer un produits
+        // créer un produit
         $product = Product::create([
             'name' => $request->name, 
             'description' => $request->description,
@@ -56,7 +56,7 @@ class ProductsController extends Controller
             'image' => $fileNameLP, 
         ]);
 
-        // lier le produit à des taille
+        // liaison de produit aux tailles
         foreach ($request->size as $sizeId) {
             $product->sizes()->attach($sizeId);
         }
@@ -68,7 +68,7 @@ class ProductsController extends Controller
     
 
     /**
-     * retourne le formulaire d'edition de produit
+     * renvoie les elements de modifications de produit
      */
     public function edit(Request $request)
     {
@@ -79,12 +79,12 @@ class ProductsController extends Controller
     }
 
     /**
-     * Mettre à jour un produit
+     * maj de produit
      */
     public function update(Request $request)
     {
         $product = Product::find($request->id);
-        // enregistrer l'image sur le serveur
+        // sauve l'image sur le serveur
         $fichierLP = $request->file('image');
         $fileNameLP = $product->image;
         if ($request->hasfile('image')) {
@@ -93,7 +93,7 @@ class ProductsController extends Controller
             $fichierLP->move(public_path('image/products/'), $fileNameLP);
         }
 
-        // créer un produit
+        // cree un produit
         $product->update([
             'name' => $request->name, 
             'description' => $request->description, 
@@ -105,7 +105,7 @@ class ProductsController extends Controller
             'image' => $fileNameLP, 
         ]);
 
-        // mettre à jour les relation entre produits et tailles
+        // mise a jour relationnelle entre produits et tailles
         foreach (Size::all() as $size) {
             if(in_array($size->id, $request->size)){
                 $product->sizes()->attach($size->id);
@@ -120,14 +120,14 @@ class ProductsController extends Controller
     }
 
     /**
-     * Supprimer un produit
+     * destuction du produit
      */
     public function destroy(Request $request)
     {
         $product = Product::find($request->id);
 
         
-        // suprimer toutes les liaisons de ce produit dans la table pivot
+        // détruire toutes les relation de ce produit dans la table pivot
         $product->sizes()->detach();
 
         $product->delete(); 

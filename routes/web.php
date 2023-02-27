@@ -44,7 +44,7 @@ Route::get('/show/{id}', [HomeController::class, 'show'])->name('show');
 
 
 
-
+// Routes qui prends en compte tout ce qui est liée aux produits de la création a la modification, a l'ajout des nouvelles données jusqu'a la destructions
 Route::get('/admin', [ProductsController::class, 'index'])->name('dashboard');
 Route::get('/admin/product_list', [ProductsController::class, 'index'])->name('dashboard.product_list');
 Route::get('/admin/product_add', [ProductsController::class, 'create'])->name('dashboard.product_add_form');
@@ -55,7 +55,7 @@ Route::post('/admin/product_delete', [ProductsController::class, 'destroy'])->na
 
 
 
-
+// Routes qui prends en compte tout ce qui est liée a la catégori de la création a la modification, a l'ajout des nouvelles données jusqu'a la destructions
 Route::get('/admin/categorie_list', [CategoriesController::class, 'index'])->name('dashboard.categorie_list');
 Route::get('/admin/categorie_add', [CategoriesController::class, 'create'])->name('dashboard.categorie_add_form');
 Route::post('/admin/categorie_add', [CategoriesController::class, 'store'])->name('dashboard.categorie_add');
@@ -65,12 +65,11 @@ Route::post('/admin/categorie_delete', [CategoriesController::class, 'destroy'])
 
 
 
-// Voici ensuite la route qui va retourner la vue qui mène à votre formulaire d'inscription :
-
+//Route pour les formulaires d'inscription
     Route::get('/register', function () {
         return view('Auth.register');
     })->name('register');
 
 
-    // Voici enfin la route qui va permettre de lire le contenu de la fonction register : 
+    // Route permettant a la lecture de la fonction register
 Route::post('/register',[AuthController::class,"register"])->name('register_user');
